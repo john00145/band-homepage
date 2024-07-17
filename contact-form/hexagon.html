@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hexagon prototype</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+
+<!-- CSS Style hexagon-->
+<!--<style>-->
+<!--    .container {-->
+<!--        display: flex;-->
+<!--        flex-direction: column;-->
+<!--        align-items: center;-->
+<!--    }-->
+
+<!--    .row {-->
+<!--        margin-bottom: -30px;-->
+<!--    }-->
+
+<!--    .hexagon {-->
+<!--        display: inline-block;-->
+<!--        box-shadow: 10px 10px 5px #000;-->
+<!--        width: 100px;-->
+<!--        height: 100px;-->
+<!--        background: #b02a37;-->
+<!--        -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);-->
+<!--        transition: .7s;-->
+<!--        margin: 2px;-->
+<!--    }-->
+<!--    .hexagon:hover {-->
+<!--        background: red;-->
+<!--        transform: rotateY(-100deg);-->
+<!--        transition: .7s;-->
+<!--        cursor: pointer;-->
+<!--    }-->
+<!--</style>-->
+
+<!--Pentagon-->
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+
+    .pentagon {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background: red;
+        clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .service {
+        position: absolute;
+        width: 40%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .service:hover {
+        transform: scale(1.1);
+    }
+
+    #service1 { top: 10%; left: 50%; transform: translateX(-50%); }
+    #service2 { top: 50%; left: 10%; transform: translateY(-50%); }
+    #service3 { top: 50%; left: 90%; transform: translateY(-50%); }
+    #service4 { bottom: 10%; left: 30%; }
+    #service5 { bottom: 10%; right: 30%; }
+
+</style>
+<body>
+
+
+    <div class="pentagon">
+        <div class="service" id="service1">Service 1</div>
+    </div>
+    <div class="pentagon">
+        <div class="service" id="service2">Service 2</div>
+    </div>
+
+
+
+    <!--Javascript hexagon function-->
+<!--<script>-->
+<!--    const container = document.querySelector('.container');-->
+<!--    const hexagonPattern = [1, 2, 3, 4];-->
+
+<!--    for (let i = 0; i < hexagonPattern.length; i++) {-->
+<!--        const row = document.createElement('div');-->
+<!--        row.classList.add('row');-->
+<!--        for (let j = 0; j < hexagonPattern[i]; j++) {-->
+<!--            const hexagon = document.createElement('div');-->
+<!--            hexagon.classList.add('hexagon');-->
+<!--            row.appendChild(hexagon);-->
+<!--        }-->
+<!--        container.appendChild(row);-->
+<!--    }-->
+<!--</script>-->
+
+<!-- Pentagon-->
+<script>
+    document.querySelectorAll('.service').forEach(service => {
+        service.addEventListener('click', function() {
+            alert(`${this.innerText} clicked!`);
+            // You can replace the above line with any other functionality you want to trigger
+        });
+    });
+
+</script>
+</body>
+</html>
